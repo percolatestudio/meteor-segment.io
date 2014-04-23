@@ -1,0 +1,74 @@
+# Segment.io loader snippet
+
+*Light Segment.io package for Meteor.*
+
+The segment.io snippet is copied almost verbatim from the [docs](https://segment.io/docs/tutorials/quickstart-analytics.js/), however, `analytics` is exposed via the Meteor package rather than `window`.
+
+## Usage
+
+The un-inited `analytics` object is available for use as per normal.
+
+First, initialize analytics:
+
+```
+analytics.load(YOUR_KEY);
+```
+
+Then, you could send a `pageview` from IronRouter:
+
+```
+Router.onRun(function() {
+  analytics.page();
+});
+```
+
+To `identify` the user, you'd setup an autorun:
+
+```
+Meteor.startup(function() {
+  Deps.autorun(function(c) {
+    // waiting for user subscription to load
+    if (! Router.current() || ! Router.current().ready())
+      return;
+
+    var user = Meteor.user();
+    if (! user)
+      return;
+    
+    analytics.identify(user._id, {
+      name: user.profile.name,
+      email: user.emails[0].address
+    });
+
+    c.stop();
+  });
+});
+```
+
+Aliasing anonymous users to a registered user when their account is created:
+
+```
+Accounts.createUser({
+  email: email,
+  password: password,
+  profile: {
+    name: name
+  }
+}, function(error) {
+  if (! error) {
+    analytics.alias(Meteor.userId());
+  } else {
+    alert('Error creating account!\n' + EJSON.stringify(error));
+  }
+});
+```
+
+Tracking an event is as simple as:
+
+```
+analytics.track('Purchased T-Shirt', {
+  name: 'The Cake is a Liar',
+  revenue: 14.99
+});
+```
+

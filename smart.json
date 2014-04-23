@@ -1,0 +1,8 @@
+{
+  "name": "segment.io",
+  "description": "Basic Segment.io loader snippet package",
+  "homepage": "https://github.com/percolatestudio/meteor-segment.io.git",
+  "author": "Zoltan Olah (https://github.com/zol)",
+  "version": "2.0.9",
+  "git": "https://github.com/percolatestudio/meteor-segment.io.git"
+}

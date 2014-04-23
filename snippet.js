@@ -1,0 +1,62 @@
+// From https://segment.io/docs/tutorials/quickstart-analytics.js/
+// Modified to use local analytics var rather than window.analytics and
+// not load/send the initial page() track.
+
+// Create a queue
+analytics = [];
+
+// A list of the methods in Analytics.js to stub.
+analytics.methods = ['identify', 'group', 'track',
+  'page', 'pageview', 'alias', 'ready', 'on', 'once', 'off',
+  'trackLink', 'trackForm', 'trackClick', 'trackSubmit'];
+
+// Define a factory to create stubs. These are placeholders
+// for methods in Analytics.js so that you never have to wait
+// for it to load to actually record data. The `method` is
+// stored as the first argument, so we can replay the data.
+analytics.factory = function(method){
+  return function(){
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(method);
+    analytics.push(args);
+    return analytics;
+  };
+};
+
+// For each of our methods, generate a queueing stub.
+for (var i = 0; i < analytics.methods.length; i++) {
+  var key = analytics.methods[i];
+  analytics[key] = analytics.factory(key);
+}
+
+// Define a method to load Analytics.js from our CDN,
+// and that will be sure to only ever load it once.
+analytics.load = function(key){
+  if (document.getElementById('analytics-js')) return;
+
+  // Create an async script element based on your key.
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.id = 'analytics-js';
+  script.async = true;
+  script.src = ('https:' === document.location.protocol
+    ? 'https://' : 'http://')
+    + 'cdn.segment.io/analytics.js/v1/'
+    + key + '/analytics.min.js';
+
+  // Insert our script next to the first script element.
+  var first = document.getElementsByTagName('script')[0];
+  first.parentNode.insertBefore(script, first);
+};
+
+// Add a version to keep track of what's in the wild.
+analytics.SNIPPET_VERSION = '2.0.9';
+
+// // Load Analytics.js with your key, which will automatically
+// // load the tools you've enabled for your account. Boosh!
+// window.analytics.load('YOUR_WRITE_KEY');
+// 
+// // Make the first page call to load the integrations. If
+// // you'd like to manually name or tag the page, edit or
+// // move this call however you'd like.
+// window.analytics.page();
