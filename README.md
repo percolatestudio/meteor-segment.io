@@ -1,10 +1,18 @@
-# Segment.io loader snippet
+# Segment.io integration for Meteor
 
-*Light Segment.io package for Meteor.*
+*works on both client and server environments*
+
+#### Client
 
 The segment.io snippet is copied almost verbatim from the [docs](https://segment.io/docs/tutorials/quickstart-analytics.js/), however, `analytics` is exposed via the Meteor package rather than `window`.
 
+#### Server
+
+Using official `analytics-node` npm module.
+
 ## Usage
+
+> Almost all the apis are available on both client and server
 
 The un-inited `analytics` object is available for use as per normal.
 
@@ -34,7 +42,7 @@ Meteor.startup(function() {
     var user = Meteor.user();
     if (! user)
       return;
-    
+
     analytics.identify(user._id, {
       name: user.profile.name,
       email: user.emails[0].address
@@ -71,4 +79,3 @@ analytics.track('Purchased T-Shirt', {
   revenue: 14.99
 });
 ```
-
