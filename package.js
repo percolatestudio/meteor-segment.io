@@ -15,6 +15,7 @@ Package.on_use(function (api) {
   }
   
   api.use('underscore', 'server');
+  
   api.add_files('snippet.js', 'client');
   api.add_files('server.js', 'server');
   
