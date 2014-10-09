@@ -11,6 +11,7 @@ Npm.depends({
 
 Package.on_use(function (api) {
   api.versionsFrom('METEOR@0.9.1.1');
-  api.add_files('snippet.js', 'client');
+  api.addFiles('snippet.js', 'client');
+  api.addFiles('server.js', 'server');
   api.export('analytics');
 });
