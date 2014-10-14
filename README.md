@@ -1,10 +1,12 @@
 # Segment.io integration for Meteor
 
-*works on both client and server environments*
+*Works on client and server.*
 
 #### Client
 
 The segment.io snippet is copied almost verbatim from the [docs](https://segment.io/docs/tutorials/quickstart-analytics.js/), however, `analytics` is exposed via the Meteor package rather than `window`.
+
+Snippet version is `2.0.9`.
 
 #### Server
 
