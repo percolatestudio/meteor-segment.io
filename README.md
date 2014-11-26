@@ -1,6 +1,6 @@
 # Segment.io integration for Meteor
 
-* Note: We've switched to the official versioning scheme for tracking upstream packages (1.0.0_1). Unfortunately, meteor will pick the highest version (in this case 3.0.0) which is old and should not be used. Please choose the latest 1.x version explicitly). *
+* Note: We've switched to the official versioning scheme for tracking upstream packages (1.1.0_1). Unfortunately, meteor will pick the highest version (in this case 3.0.0) which is old and should not be used. Please choose the latest 1.x version explicitly). *
 
 *Works on client and server.*
 
