@@ -38,7 +38,7 @@ To `identify` the user, you'd setup an autorun:
 
 ```
 Meteor.startup(function() {
-  Deps.autorun(function(c) {
+  Tracker.autorun(function(c) {
     // waiting for user subscription to load
     if (! Router.current() || ! Router.current().ready())
       return;
