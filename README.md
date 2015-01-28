@@ -83,3 +83,7 @@ analytics.track('Purchased T-Shirt', {
   revenue: 14.99
 });
 ```
+
+## License
+
+MIT, Percolate Studio
