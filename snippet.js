@@ -3,7 +3,7 @@
 // not load/send the initial page() track.
 
 // Create a queue, but don't obliterate an existing one!
-var analytics = analytics || [];
+analytics = analytics || [];
 
 // If the real analytics.js is already on the page return.
 if (analytics.initialize) return;
