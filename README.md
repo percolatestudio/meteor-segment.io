@@ -8,7 +8,7 @@
 
 The segment.io snippet is copied almost verbatim from the [docs](https://segment.io/docs/tutorials/quickstart-analytics.js/), however, `analytics` is exposed via the Meteor package rather than `window`.
 
-Snippet version is `2.0.9`.
+Snippet version is `3.0.1`.
 
 #### Server
 
