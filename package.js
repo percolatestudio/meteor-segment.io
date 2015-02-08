@@ -1,12 +1,12 @@
 Package.describe({
   summary: "Segment.io integration for Meteor (works on both client and server)",
-  version: "1.1.0_1",
+  version: "1.1.1_1",
   name: "percolatestudio:segment.io",
   git: "https://github.com/percolatestudio/meteor-segment.io.git"
 });
 
 Npm.depends({
-  "analytics-node": "1.1.0"
+  "analytics-node": "1.1.1"
 });
 
 Package.on_use(function (api) {
