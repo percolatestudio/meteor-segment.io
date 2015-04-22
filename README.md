@@ -84,6 +84,6 @@ analytics.track('Purchased T-Shirt', {
 });
 ```
 
-## License
+## License 
 
-MIT, Percolate Studio
+MIT. (c) Percolate Studio, maintained by Zoltan Olah (@zol).
