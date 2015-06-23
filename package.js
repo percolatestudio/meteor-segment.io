@@ -6,7 +6,7 @@ Package.describe({
 });
 
 Npm.depends({
-  "analytics-node": "1.1.1"
+  "analytics-node": "1.2.2"
 });
 
 Package.on_use(function (api) {
