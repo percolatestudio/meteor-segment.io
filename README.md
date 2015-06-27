@@ -31,7 +31,7 @@ Then, you could send a `pageview` from IronRouter:
 ```
 Router.onRun(function() {
   analytics.page();
-  this.next(); // If using versions later than 0.9.4
+  this.next(); // If using versions of IronRouter later than 0.9.4
 });
 ```
 
