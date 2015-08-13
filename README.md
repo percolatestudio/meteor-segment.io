@@ -30,7 +30,11 @@ Then, you could send a `pageview` from IronRouter:
 
 ```
 Router.onRun(function() {
-  analytics.page();
+  // Defer calling page() till the next tick so it correctly records the
+  // current url as opposed to the previous one
+  Meteor.setTimeout(function() {
+    analytics.page();
+  });
   this.next(); // If using versions of IronRouter later than 0.9.4
 });
 ```
