@@ -1,6 +1,6 @@
 # Segment.io integration for Meteor
 
-* Note: We've switched to the official versioning scheme for tracking upstream packages (1.1.0_1). Unfortunately, meteor will pick the highest version (in this case 3.0.0) which is old and should not be used. Please choose the latest 1.x version explicitly like so `meteor add percolatestudio:segment.io@=1.2.2_1`). *
+* Note: We've switched to the official versioning scheme for tracking upstream packages (1.1.0_1). Unfortunately, meteor will pick the highest version (in this case 3.0.0) which is old and should not be used. Please choose the latest 1.x version explicitly like so `meteor add percolatestudio:segment.io@1.2.2_1`). *
 
 *Works on client and server.*
 
