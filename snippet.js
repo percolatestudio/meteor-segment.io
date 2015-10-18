@@ -28,6 +28,7 @@ analytics.methods = [
   'trackForm',
   'pageview',
   'identify',
+  'reset',
   'group',
   'track',
   'ready',
@@ -75,7 +76,7 @@ analytics.load = function(key){
 };
 
 // Add a version to keep track of what's in the wild.
-analytics.SNIPPET_VERSION = '3.0.1';
+analytics.SNIPPET_VERSION = '3.1.0';
 
 // Load Analytics.js with your key, which will automatically
 // load the tools you've enabled for your account. Boosh!
