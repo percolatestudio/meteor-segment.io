@@ -1,6 +1,6 @@
 # Segment.io integration for Meteor
 
-* Note: We've switched to the official versioning scheme for tracking upstream packages (1.1.0_1). Unfortunately, meteor will pick the highest version (in this case 3.0.0) which is old and should not be used. Please choose the latest 1.x version explicitly like so `meteor add percolatestudio:segment.io@1.2.2_1`). *
+* Note: We've switched to the official versioning scheme for tracking upstream packages (1.1.0_1). Unfortunately, meteor will pick the highest version (in this case 3.0.0) which is old and should not be used. Please choose the latest version explicitly like so `meteor add percolatestudio:segment.io@2.0.0_1`). *
 
 *Works on client and server.*
 
@@ -8,7 +8,7 @@
 
 The segment.io snippet is copied almost verbatim from the [docs](https://segment.io/docs/tutorials/quickstart-analytics.js/), however, `analytics` is exposed via the Meteor package rather than `window`.
 
-Snippet version is `3.0.1`.
+Snippet version is `3.1.0`.
 
 #### Server
 
@@ -89,6 +89,6 @@ analytics.track('Purchased T-Shirt', {
 });
 ```
 
-## License 
+## License
 
 MIT. (c) Percolate Studio, maintained by Zoltan Olah (@zol).
