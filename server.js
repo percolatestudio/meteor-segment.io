@@ -1,8 +1,8 @@
 var Analytics = Npm.require('analytics-node');
 
 analytics = {};
-analytics.load = function(writeKet) {
-  var a = new Analytics(writeKet);
+analytics.load = function(writeKey) {
+  var a = new Analytics(writeKey);
 
   // extending a's functionality to the analytics namespace
   analytics.__proto__ = a.__proto__;
