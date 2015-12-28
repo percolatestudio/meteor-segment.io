@@ -1,5 +1,4 @@
 var Analytics = Npm.require('analytics-node');
-var userId = Meteor.userId();
 
 analytics = {};
 analytics.load = function (writeKey) {
@@ -8,18 +7,19 @@ analytics.load = function (writeKey) {
   // extending a's functionality to the analytics namespace
   a.__proto__.track = function (event, properties) {
     'use strict';
-    var props = {
+    var message = {
       event: event,
       properties: properties
     };
 
+    var userId = Meteor.userId();
     if (userId) {
-      props['userId'] = userId;
+      message['userId'] = userId;
     } else {
-      props['anonymous_id'] = 'anonymous-user';
+      message['anonymous_id'] = 'anonymous-user';
     }
 
-    a._track(props);
+    a._track(message);
   };
 
   analytics.__proto__ = a.__proto__;
