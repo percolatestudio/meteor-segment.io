@@ -80,7 +80,7 @@ Accounts.createUser({
 });
 ```
 
-Tracking an event is as simple as:
+Tracking an event on the client:
 
 ```
 analytics.track('Purchased T-Shirt', {
@@ -89,6 +89,18 @@ analytics.track('Purchased T-Shirt', {
 });
 ```
 
+[Tracking](https://segment.com/docs/libraries/node/#track) an event on the server:
+
+```
+analytics.track({
+  userId: Meteor.userId(),
+  event: 'Purchased T-Shirt',
+  properties: {
+    name: 'The Cake is a Liar',
+    revenue: 14.99
+  }
+});
+```
 ## License
 
 MIT. (c) Percolate Studio, maintained by Zoltan Olah (@zol).
