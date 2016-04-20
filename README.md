@@ -6,4 +6,4 @@ The legacy README has [moved](README-legacy.md).
 
 ## License
 
-MIT. (c) Percolate Studio, maintained by Zoltan Olah (@zol).
+MIT. (c) Percolate Studio, (no longer) maintained by Zoltan Olah (@zol).
